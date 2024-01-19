@@ -24,6 +24,10 @@ app.get("/" , (req, res) => {
     res.render("index");
 });
 
+app.get("/timeline", (req,res) => {
+    res.render("timeline");
+})
+
 app.listen(port, () => {
     console.log(`server is running at port number ${port}`);
 })
