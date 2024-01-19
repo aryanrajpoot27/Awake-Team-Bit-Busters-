@@ -15,3 +15,7 @@ const adminSchema = new mongoose.Schema({
         required : true
     }
 }) 
+
+const Register = new mongoose.model("Register", adminSchema);
+
+module.exports = Register;
