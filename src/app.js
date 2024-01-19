@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("path") ;
+const path = require("path") 
 const app = express(); 
 const hbs = require("hbs");
 
@@ -20,7 +20,9 @@ app.set("view engine", "hbs");
 app.set("views", template_path);
 hbs.registerPartials(partials_path); 
 
-
+app.get("/" , (req, res) => {
+    res.render("index");
+});
 
 app.listen(port, () => {
     console.log(`server is running at port number ${port}`);
