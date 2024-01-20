@@ -5,7 +5,7 @@ const hbs = require("hbs");
 require("./db/conn")
 
 const Register = require("./models/users");
-const driverRegister = require("./models/drivers");
+const uRegister = require("./models/drivers");
 
 const port = process.env.PORT || 3000;
 
@@ -84,20 +84,41 @@ app.post("/login", async (req,res) => {
 app.post("/driverRegister", async (req,res) => {
     try {
  
-     const registerDriver = new driverRegister({
+     const registerDriver = new uRegister({
          name : req.body.name,
          email:req.body.email,
          password:req.body.password
  
      })
  
-     const registeredUser  = await registerDriver.save();
+     const uregistered = await registerDriver.save();
      res.status(201).render("index");
  
     } catch (error) {
       res.status(400).send(error);
     }
  })
+
+
+ 
+app.post("/driverLogin", async (req,res) => {
+    try {
+       const Uemail = req.body.email;
+       const Upassword = req.body.password;
+
+      const uemail =  await uRegister.findOne({email:Uemail})
+      
+      if(uemail.password === Upassword){
+       res.status(201).render("timeline");
+      }
+      else{
+       res.send("Invalid Login Details")
+      }
+
+    } catch (error) {
+       res.status(400).send("Invalid Login Details")
+    }
+})
 
 
 

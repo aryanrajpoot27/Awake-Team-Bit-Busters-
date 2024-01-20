@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const driverSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name :{
         type : String,
         required : true
@@ -16,6 +16,6 @@ const driverSchema = new mongoose.Schema({
     }
 }) 
 
-const driverRegister = new mongoose.model("driverRegister", driverSchema);
+const uRegister = new mongoose.model("driverRegister", userSchema);
 
-module.exports = driverRegister;
+module.exports = uRegister;
