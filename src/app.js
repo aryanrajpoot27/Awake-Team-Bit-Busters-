@@ -5,6 +5,7 @@ const hbs = require("hbs");
 require("./db/conn")
 
 const Register = require("./models/users");
+const driverRegister = require("./models/drivers");
 
 const port = process.env.PORT || 3000;
 
