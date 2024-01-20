@@ -81,6 +81,27 @@ app.post("/login", async (req,res) => {
 })
 
 
+app.post("/driverRegister", async (req,res) => {
+    try {
+ 
+     const registerDriver = new driverRegister({
+         name : req.body.name,
+         email:req.body.email,
+         password:req.body.password
+ 
+     })
+ 
+     const registeredUser  = await registerDriver.save();
+     res.status(201).render("index");
+ 
+    } catch (error) {
+      res.status(400).send(error);
+    }
+ })
+
+
+
+
 app.listen(port, () => {
     console.log(`server is running at port number ${port}`);
 })
