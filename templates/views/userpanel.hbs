@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Panel</title>
+</head>
+<body>
+  <h1>User Panel</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{email}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <a href="/register">Register</a>
+</body>
+</html>
