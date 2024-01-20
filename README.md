@@ -7,7 +7,7 @@ Nowadays drowsiness of drivers is one of the main reasons behind road accidents.
 Driver Drowsiness Alert System: Using an IR sensor, relay module, GSM SIM900-A, Arduino Uno, gear motor, step-down converter, and glasses with IR sensor, this project detects driver eye closure. When the driver's eyelids close, a 2-second timer starts, and an alarm alerts the driver. The wheel's speed is reduced via the relay module, and after 3 beeps, the vehicle stops using the brakes. Alerts are sent to the driver's contacts , enhancing road safety.
 
 # Youtube Link
-
+https://youtu.be/EW6AbsaePzA?si=JQiujn3FAgzCls9T
 
 # Run
 
