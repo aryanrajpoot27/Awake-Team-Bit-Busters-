@@ -38,6 +38,10 @@ app.get("/adminpanel", (req,res) => {
     res.render("adminpanel");
 })
 
+app.get("/userRegister", (req,res) => {
+    res.render("userRegister");
+})
+
 app.post("/register", async (req,res) => {
    try {
 
