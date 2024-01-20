@@ -16,13 +16,20 @@ const partials_path = path.join(__dirname, "../templates/partials" );
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-
 app.use(express.static(static_path));
 
 app.set("view engine", "hbs");
 
+
 app.set("views", template_path);
 hbs.registerPartials(partials_path); 
+
+app.get('/getAdmins',(req,res) => {
+    Register.find()
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
 
 app.get("/" , (req, res) => {
     res.render("index");
@@ -42,6 +49,8 @@ app.get("/adminpanel", (req,res) => {
 app.get("/userRegister", (req,res) => {
     res.render("userRegister");
 })
+
+
 
 app.post("/register", async (req,res) => {
    try {
@@ -110,7 +119,7 @@ app.post("/driverLogin", async (req,res) => {
       const uemail =  await uRegister.findOne({email:Uemail})
       
       if(uemail.password === Upassword){
-       res.status(201).render("timeline");
+       res.status(201).render("userpanel");
       }
       else{
        res.send("Invalid Login Details")
