@@ -34,6 +34,7 @@ app.get("/register", (req,res) => {
 app.get("/timeline", (req,res) => {
     res.render("timeline");
 })
+
 app.get("/adminpanel", (req,res) => {
     res.render("adminpanel");
 })
@@ -119,7 +120,6 @@ app.post("/driverLogin", async (req,res) => {
        res.status(400).send("Invalid Login Details")
     }
 })
-
 
 
 

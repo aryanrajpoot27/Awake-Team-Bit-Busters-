@@ -39,9 +39,9 @@
 
     </div>
     <div class="sidenav_footer">
-      <a href="#" class="sidenav_link">
+      <a class="sidenav_link" >
         <i class='bx bx-log-out'></i>
-        <h3>Log Out</h3>
+        <button class="logout-btn">Log Out</button>
       </a>
     </div>
     
@@ -152,6 +152,14 @@ toggleBtn.addEventListener('click', ()=>{
     disableDarkMode();
   }
 })
+
+
+const logoutBtn = document.querySelector(".logout-btn")
+
+logoutBtn.addEventListener("click",() => {
+  window.location.replace("/")
+})
+
  </script>
 </body>
 </html>
